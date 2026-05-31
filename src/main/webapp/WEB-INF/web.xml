@@ -8,7 +8,7 @@
     <display-name>学生信息管理系统</display-name>
 
     <welcome-file-list>
-        <welcome-file>jsp/studentlist.jsp</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
     <!-- ListStudentServlet -->

@@ -20,10 +20,8 @@ public class ListStudentServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("=== ListStudentServlet called ===");
         StudentModel model = new StudentModel();
         List<Student> studentList = model.getAllStudents();
-        System.out.println("=== studentList size: " + studentList.size() + " ===");
         request.setAttribute("studentList", studentList);
         request.getRequestDispatcher("/jsp/studentlist.jsp").forward(request, response);
     }
