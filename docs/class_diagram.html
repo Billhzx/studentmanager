@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>学生信息管理系统类图</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+body { background:#fff; display:flex; justify-content:center; align-items:center; min-height:100vh; margin:0; }
+.mermaid { font-family:"Microsoft YaHei",sans-serif; }
+</style>
+</head>
+<body>
+<div class="mermaid">
+classDiagram
+    class Student {
+        -int id
+        -String studentNo
+        -String name
+        -String gender
+        -int age
+        -String major
+        -String className
+        +Student()
+        +Student(id, studentNo, name, gender, age, major, className)
+        +getId() int
+        +setId(int) void
+        +getStudentNo() String
+        +setStudentNo(String) void
+        +getName() String
+        +setName(String) void
+        +getGender() String
+        +setGender(String) void
+        +getAge() int
+        +setAge(int) void
+        +getMajor() String
+        +setMajor(String) void
+        +getClassName() String
+        +setClassName(String) void
+        +toString() String
+    }
+
+    class Dbconn {
+        -URL$ String
+        -USER$ String
+        -PASSWORD$ String
+        -DRIVER$ String
+        +getConnection()$ Connection
+        +close(conn,stmt,rs)$ void
+        +close(conn,stmt)$ void
+    }
+
+    class StudentModel {
+        +getAllStudents() List
+        +getStudentById(int) Student
+        +insertStudent(Student) int
+        +updateStudent(Student) int
+        +deleteStudent(int) int
+        +insertStudentBatch(List) int
+    }
+
+    class ListStudentServlet {
+        +doGet(req,resp)
+        +doPost(req,resp)
+    }
+    class InsertStudentServlet {
+        +doGet(req,resp)
+        +doPost(req,resp)
+    }
+    class UpStudentServlet {
+        +doGet(req,resp)
+    }
+    class DoStudentServlet {
+        +doPost(req,resp)
+    }
+    class ShowStudentServlet {
+        +doGet(req,resp)
+    }
+    class DeleteStudentServlet {
+        +doGet(req,resp)
+    }
+    class ImportStudentServlet {
+        +doGet(req,resp)
+        +doPost(req,resp)
+    }
+
+    class HttpServlet {
+        &lt;&lt;abstract&gt;&gt;
+        +doGet(req,resp)
+        +doPost(req,resp)
+    }
+
+    HttpServlet <|-- ListStudentServlet
+    HttpServlet <|-- InsertStudentServlet
+    HttpServlet <|-- UpStudentServlet
+    HttpServlet <|-- DoStudentServlet
+    HttpServlet <|-- ShowStudentServlet
+    HttpServlet <|-- DeleteStudentServlet
+    HttpServlet <|-- ImportStudentServlet
+
+    StudentModel ..> Dbconn : use
+    StudentModel ..> Student : use
+    ListStudentServlet --> StudentModel : use
+    InsertStudentServlet --> StudentModel : use
+    InsertStudentServlet --> Student : use
+    UpStudentServlet --> StudentModel : use
+    DoStudentServlet --> StudentModel : use
+    DoStudentServlet --> Student : use
+    ShowStudentServlet --> StudentModel : use
+    DeleteStudentServlet --> StudentModel : use
+    ImportStudentServlet --> StudentModel : use
+    ImportStudentServlet --> Student : use
+</div>
+<script>mermaid.initialize({startOnLoad:true,theme:'default'});</script>
+</body>
+</html>
