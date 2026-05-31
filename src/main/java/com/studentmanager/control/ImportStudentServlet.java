@@ -50,6 +50,7 @@ public class ImportStudentServlet extends HttpServlet {
              Workbook workbook = new XSSFWorkbook(is)) {
 
             Sheet sheet = workbook.getSheetAt(0);
+            System.out.println("=== Import: lastRowNum=" + sheet.getLastRowNum() + " ===");
 
             // 从第2行开始读取（第1行为标题行）
             for (int i = 1; i <= sheet.getLastRowNum(); i++) {
