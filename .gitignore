@@ -1,0 +1,25 @@
+# Compiled class files
+*.class
+/build/
+/bin/
+/target/
+
+# IDE files
+.project
+.classpath
+.settings/
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Tomcat specific
+/work/
+
+# Temp
+*.tmp

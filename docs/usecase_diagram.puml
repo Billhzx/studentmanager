@@ -1,0 +1,27 @@
+@startuml 学生信息管理系统用例图
+skinparam packageStyle rectangle
+
+left to right direction
+
+actor "系统管理员" as Admin
+
+rectangle "学生信息管理系统" {
+    usecase "查看学生列表" as UC1
+    usecase "新增学生信息" as UC2
+    usecase "修改学生信息" as UC3
+    usecase "删除学生信息" as UC4
+    usecase "Excel批量导入" as UC5
+    usecase "查询学生详情" as UC6
+}
+
+Admin --> UC1
+Admin --> UC2
+Admin --> UC3
+Admin --> UC4
+Admin --> UC5
+Admin --> UC6
+
+UC3 ..> UC6 : <<extend>>
+UC4 ..> UC6 : <<extend>>
+
+@enduml

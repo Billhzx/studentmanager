@@ -1,0 +1,115 @@
+@startuml 学生信息管理系统类图
+skinparam classAttributeIconSize 0
+skinparam class {
+    BackgroundColor White
+    BorderColor #333
+    HeaderBackgroundColor #4A90D9
+}
+
+' ── 实体层 ──
+class Student {
+    - id : int
+    - studentNo : String
+    - name : String
+    - gender : String
+    - age : int
+    - major : String
+    - className : String
+    + Student()
+    + Student(id, studentNo, name, gender, age, major, className)
+    + getId() : int
+    + setId(id: int) : void
+    + getStudentNo() : String
+    + setStudentNo(studentNo: String) : void
+    + getName() : String
+    + setName(name: String) : void
+    + getGender() : String
+    + setGender(gender: String) : void
+    + getAge() : int
+    + setAge(age: int) : void
+    + getMajor() : String
+    + setMajor(major: String) : void
+    + getClassName() : String
+    + setClassName(className: String) : void
+    + toString() : String
+}
+
+' ── 数据库工具层 ──
+class Dbconn {
+    - {static} URL : String
+    - {static} USER : String
+    - {static} PASSWORD : String
+    - {static} DRIVER : String
+    + {static} getConnection() : Connection
+    + {static} close(conn, stmt, rs) : void
+    + {static} close(conn, stmt) : void
+}
+
+' ── 模型层 ──
+class StudentModel {
+    + getAllStudents() : List~Student~
+    + getStudentById(id: int) : Student
+    + insertStudent(s: Student) : int
+    + updateStudent(s: Student) : int
+    + deleteStudent(id: int) : int
+    + insertStudentBatch(list: List~Student~) : int
+}
+
+' ── 控制器层 ──
+abstract class HttpServlet {
+    + doGet(req, resp)
+    + doPost(req, resp)
+}
+
+class ListStudentServlet {
+    + doGet(req, resp)
+    + doPost(req, resp)
+}
+
+class InsertStudentServlet {
+    + doPost(req, resp)
+}
+
+class UpStudentServlet {
+    + doGet(req, resp)
+}
+
+class DoStudentServlet {
+    + doPost(req, resp)
+}
+
+class ShowStudentServlet {
+    + doGet(req, resp)
+}
+
+class DeleteStudentServlet {
+    + doGet(req, resp)
+}
+
+class ImportStudentServlet {
+    + doPost(req, resp)
+}
+
+' ── 关系 ──
+HttpServlet <|-- ListStudentServlet
+HttpServlet <|-- InsertStudentServlet
+HttpServlet <|-- UpStudentServlet
+HttpServlet <|-- DoStudentServlet
+HttpServlet <|-- ShowStudentServlet
+HttpServlet <|-- DeleteStudentServlet
+HttpServlet <|-- ImportStudentServlet
+
+StudentModel ..> Dbconn : <<use>>
+StudentModel ..> Student : <<use>>
+ListStudentServlet --> StudentModel : <<use>>
+InsertStudentServlet --> StudentModel : <<use>>
+InsertStudentServlet --> Student : <<use>>
+UpStudentServlet --> StudentModel : <<use>>
+DoStudentServlet --> StudentModel : <<use>>
+DoStudentServlet --> Student : <<use>>
+ShowStudentServlet --> StudentModel : <<use>>
+DeleteStudentServlet --> StudentModel : <<use>>
+ImportStudentServlet --> StudentModel : <<use>>
+ImportStudentServlet --> Student : <<use>>
+
+@enduml
