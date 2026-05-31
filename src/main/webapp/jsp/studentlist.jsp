@@ -13,8 +13,8 @@
         <div class="page-header">
             <h1>学生信息列表</h1>
             <div class="header-actions">
-                <a href="jsp/studentinsert.jsp" class="btn btn-primary">新增学生</a>
-                <a href="jsp/studentimport.jsp" class="btn btn-success">Excel导入</a>
+                <a href="InsertStudentServlet.do" class="btn btn-primary">新增学生</a>
+                <a href="ImportStudentServlet.do" class="btn btn-success">Excel导入</a>
             </div>
         </div>
 
@@ -70,7 +70,7 @@
                 <div class="empty-icon">&#128218;</div>
                 <h3>暂无学生数据</h3>
                 <p>系统中还没有任何学生信息记录。</p>
-                <a href="jsp/studentinsert.jsp" class="btn btn-primary">添加学生</a>
+                <a href="InsertStudentServlet.do" class="btn btn-primary">添加学生</a>
             </div>
         <% } %>
     </div>

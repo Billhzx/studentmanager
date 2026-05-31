@@ -16,6 +16,12 @@ import java.io.IOException;
 public class InsertStudentServlet extends HttpServlet {
 
     @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        request.getRequestDispatcher("/jsp/studentinsert.jsp").forward(request, response);
+    }
+
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
@@ -39,10 +45,9 @@ public class InsertStudentServlet extends HttpServlet {
         int result = model.insertStudent(s);
 
         if (result > 0) {
-            request.setAttribute("msg", "新增学生信息成功！");
+            response.sendRedirect("ListStudentServlet.do");
         } else {
             request.setAttribute("msg", "新增学生信息失败！");
-        }
-        request.getRequestDispatcher("/jsp/studentinsert.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/studentinsert.jsp").forward(request, response);
     }
 }
