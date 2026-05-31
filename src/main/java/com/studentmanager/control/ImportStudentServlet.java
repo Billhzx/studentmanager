@@ -7,8 +7,6 @@ import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.MultipartConfig;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -22,12 +20,6 @@ import java.util.List;
  * Excel批量导入学生信息控制器
  * 接收上传的Excel文件，解析并批量导入数据库
  */
-@WebServlet("/ImportStudentServlet.do")
-@MultipartConfig(
-    fileSizeThreshold = 1024 * 1024,
-    maxFileSize = 1024 * 1024 * 10,
-    maxRequestSize = 1024 * 1024 * 50
-)
 public class ImportStudentServlet extends HttpServlet {
 
     @Override

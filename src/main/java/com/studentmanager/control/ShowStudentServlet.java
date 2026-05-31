@@ -4,7 +4,6 @@ import com.studentmanager.entity.Student;
 import com.studentmanager.model.StudentModel;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -13,7 +12,6 @@ import java.io.IOException;
 /**
  * 删除前控制器：根据ID查询学生信息并转发到确认删除页面
  */
-@WebServlet("/ShowStudentServlet.do")
 public class ShowStudentServlet extends HttpServlet {
 
     @Override

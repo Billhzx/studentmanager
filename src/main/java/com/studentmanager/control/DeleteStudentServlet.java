@@ -3,7 +3,6 @@ package com.studentmanager.control;
 import com.studentmanager.model.StudentModel;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -12,7 +11,6 @@ import java.io.IOException;
 /**
  * 删除后控制器：执行删除操作并重定向到列表页
  */
-@WebServlet("/DeleteStudentServlet.do")
 public class DeleteStudentServlet extends HttpServlet {
 
     @Override

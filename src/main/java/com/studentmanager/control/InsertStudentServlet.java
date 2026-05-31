@@ -4,7 +4,6 @@ import com.studentmanager.entity.Student;
 import com.studentmanager.model.StudentModel;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -14,7 +13,6 @@ import java.io.IOException;
  * 新增学生信息控制器
  * 接收表单数据，插入数据库，重定向到列表页
  */
-@WebServlet("/InsertStudentServlet.do")
 public class InsertStudentServlet extends HttpServlet {
 
     @Override

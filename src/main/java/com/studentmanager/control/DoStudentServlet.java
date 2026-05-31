@@ -4,7 +4,6 @@ import com.studentmanager.entity.Student;
 import com.studentmanager.model.StudentModel;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -13,7 +12,6 @@ import java.io.IOException;
 /**
  * 修改后控制器：接收修改后的表单数据，更新数据库
  */
-@WebServlet("/DoStudentServlet.do")
 public class DoStudentServlet extends HttpServlet {
 
     @Override

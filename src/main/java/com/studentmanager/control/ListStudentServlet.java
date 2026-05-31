@@ -4,7 +4,7 @@ import com.studentmanager.entity.Student;
 import com.studentmanager.model.StudentModel;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
+
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -15,7 +15,6 @@ import java.util.List;
  * 学生信息列表控制器
  * 查询所有学生信息并转发到列表页面
  */
-@WebServlet("/ListStudentServlet.do")
 public class ListStudentServlet extends HttpServlet {
 
     @Override
