@@ -19,8 +19,8 @@ def fill_header(table):
     add_text_paragraph(table.rows[0].cells[1], '202331607106',
                       align=WD_ALIGN_PARAGRAPH.CENTER, indent=False)
 
-    clear_cell(table.rows[0].cells[5])
-    add_text_paragraph(table.rows[0].cells[5], '韩志鑫',
+    clear_cell(table.rows[0].cells[6])
+    add_text_paragraph(table.rows[0].cells[6], '韩志鑫',
                       align=WD_ALIGN_PARAGRAPH.CENTER, indent=False)
 
     # Row 1: 专业 + 班级
