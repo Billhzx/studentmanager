@@ -15,57 +15,36 @@ SS = r'F:\SoftwareEngineering\softwareproject\experiment6\screenshots'
 
 def fill_header(table):
     # Row 0: 学号 + 姓名
-    cell = table.rows[0].cells[1]
-    clear_cell(cell)
-    p = add_paragraph(cell)
-    run = p.add_run('202331607106')
-    set_run_font(run, SONG, TNR, Pt(12))
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    clear_cell(table.rows[0].cells[1])
+    add_text_paragraph(table.rows[0].cells[1], '202331607106',
+                      align=WD_ALIGN_PARAGRAPH.CENTER, indent=False)
 
-    cell = table.rows[0].cells[5]
-    clear_cell(cell)
-    p = add_paragraph(cell)
-    run = p.add_run('韩志鑫')
-    set_run_font(run, SONG, TNR, Pt(12))
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    clear_cell(table.rows[0].cells[5])
+    add_text_paragraph(table.rows[0].cells[5], '韩志鑫',
+                      align=WD_ALIGN_PARAGRAPH.CENTER, indent=False)
 
     # Row 1: 专业 + 班级
-    cell = table.rows[1].cells[1]
-    clear_cell(cell)
-    p = add_paragraph(cell)
-    run = p.add_run('计算机科学与技术')
-    set_run_font(run, SONG, TNR, Pt(12))
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    clear_cell(table.rows[1].cells[1])
+    add_text_paragraph(table.rows[1].cells[1], '计算机科学与技术',
+                      align=WD_ALIGN_PARAGRAPH.CENTER, indent=False)
 
-    cell = table.rows[1].cells[5]
-    clear_cell(cell)
-    p = add_paragraph(cell)
-    run = p.add_run('23级卓越班')
-    set_run_font(run, SONG, TNR, Pt(12))
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    clear_cell(table.rows[1].cells[5])
+    add_text_paragraph(table.rows[1].cells[5], '23级卓越班',
+                      align=WD_ALIGN_PARAGRAPH.CENTER, indent=False)
 
     # Row 2: 课程名称 + 课程类型
-    cell = table.rows[2].cells[1]
-    clear_cell(cell)
-    p = add_paragraph(cell)
-    run = p.add_run('软件工程')
-    set_run_font(run, SONG, TNR, Pt(12))
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    clear_cell(table.rows[2].cells[1])
+    add_text_paragraph(table.rows[2].cells[1], '软件工程',
+                      align=WD_ALIGN_PARAGRAPH.CENTER, indent=False)
 
-    cell = table.rows[2].cells[5]
-    clear_cell(cell)
-    p = add_paragraph(cell)
-    run = p.add_run('必修课')
-    set_run_font(run, SONG, TNR, Pt(12))
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    clear_cell(table.rows[2].cells[5])
+    add_text_paragraph(table.rows[2].cells[5], '必修课',
+                      align=WD_ALIGN_PARAGRAPH.CENTER, indent=False)
 
     # Row 3: 实验名称
-    cell = table.rows[3].cells[1]
-    clear_cell(cell)
-    p = add_paragraph(cell)
-    run = p.add_run('实验六 面向对象软件案例的UML建模')
-    set_run_font(run, SONG, TNR, Pt(12))
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    clear_cell(table.rows[3].cells[1])
+    add_text_paragraph(table.rows[3].cells[1], '实验六 面向对象软件案例的UML建模',
+                      align=WD_ALIGN_PARAGRAPH.CENTER, indent=False)
 
 
 def fill_purpose(table):
