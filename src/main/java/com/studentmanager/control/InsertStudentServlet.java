@@ -49,5 +49,6 @@ public class InsertStudentServlet extends HttpServlet {
         } else {
             request.setAttribute("msg", "新增学生信息失败！");
             request.getRequestDispatcher("/jsp/studentinsert.jsp").forward(request, response);
+        }
     }
 }
