@@ -65,12 +65,17 @@ public class ImportStudentServlet extends HttpServlet {
                     s.setAge((int) getCellNumeric(row, 3));
                     s.setMajor(getCellString(row, 4));
                     s.setClassName(getCellString(row, 5));
+                    System.out.println("=== Row " + i + ": " + s.getStudentNo() + ", " + s.getName() + " ===");
 
                     if (s.getStudentNo() != null && !s.getStudentNo().isEmpty()
                             && s.getName() != null && !s.getName().isEmpty()) {
                         students.add(s);
+                    } else {
+                        System.out.println("=== Row " + i + " skipped: empty studentNo or name ===");
                     }
                 } catch (Exception e) {
+                    System.out.println("=== Row " + i + " ERROR ===");
+                    e.printStackTrace();
                     failCount++;
                 }
             }
