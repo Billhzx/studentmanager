@@ -15,7 +15,7 @@ public class Dbconn {
     private static final String URL = "jdbc:mysql://localhost:3306/students?useSSL=false&characterEncoding=utf8";
     private static final String USER = "root";
     private static final String PASSWORD = "hzx123aaaa";
-    private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
+    private static final String DRIVER = "com.mysql.jdbc.Driver";
 
     static {
         try {
