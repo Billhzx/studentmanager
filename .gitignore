@@ -29,6 +29,9 @@ Thumbs.db
 /实验六*.docx
 /docs/*.html
 
+# Report generation script (not source code)
+/gen_exp6_report.py
+
 # Word temp files
 ~$*
 /screenshots/
