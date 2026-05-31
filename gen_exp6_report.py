@@ -19,8 +19,8 @@ def fill_header(table):
     add_text_paragraph(table.rows[0].cells[1], '202331607106',
                       align=WD_ALIGN_PARAGRAPH.CENTER, indent=False)
 
-    clear_cell(table.rows[0].cells[6])
-    add_text_paragraph(table.rows[0].cells[6], '韩志鑫',
+    clear_cell(table.rows[0].cells[7])
+    add_text_paragraph(table.rows[0].cells[7], '韩志鑫',
                       align=WD_ALIGN_PARAGRAPH.CENTER, indent=False)
 
     # Row 1: 专业 + 班级
@@ -28,8 +28,8 @@ def fill_header(table):
     add_text_paragraph(table.rows[1].cells[1], '计算机科学与技术',
                       align=WD_ALIGN_PARAGRAPH.CENTER, indent=False)
 
-    clear_cell(table.rows[1].cells[5])
-    add_text_paragraph(table.rows[1].cells[5], '23级卓越班',
+    clear_cell(table.rows[1].cells[7])
+    add_text_paragraph(table.rows[1].cells[7], '23级卓越班',
                       align=WD_ALIGN_PARAGRAPH.CENTER, indent=False)
 
     # Row 2: 课程名称 + 课程类型
@@ -37,8 +37,8 @@ def fill_header(table):
     add_text_paragraph(table.rows[2].cells[1], '软件工程',
                       align=WD_ALIGN_PARAGRAPH.CENTER, indent=False)
 
-    clear_cell(table.rows[2].cells[5])
-    add_text_paragraph(table.rows[2].cells[5], '必修课',
+    clear_cell(table.rows[2].cells[6])
+    add_text_paragraph(table.rows[2].cells[6], '必修课',
                       align=WD_ALIGN_PARAGRAPH.CENTER, indent=False)
 
     # Row 3: 实验名称
