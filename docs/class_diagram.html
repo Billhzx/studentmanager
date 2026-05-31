@@ -6,110 +6,99 @@
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <style>
 body { background:#fff; display:flex; justify-content:center; align-items:center; min-height:100vh; margin:0; }
-.mermaid { font-family:"Microsoft YaHei",sans-serif; }
 </style>
 </head>
 <body>
-<div class="mermaid">
+<pre class="mermaid">
 classDiagram
-    class Student {
-        -int id
-        -String studentNo
-        -String name
-        -String gender
-        -int age
-        -String major
-        -String className
-        +Student()
-        +Student(id, studentNo, name, gender, age, major, className)
-        +getId() int
-        +setId(int) void
-        +getStudentNo() String
-        +setStudentNo(String) void
-        +getName() String
-        +setName(String) void
-        +getGender() String
-        +setGender(String) void
-        +getAge() int
-        +setAge(int) void
-        +getMajor() String
-        +setMajor(String) void
-        +getClassName() String
-        +setClassName(String) void
-        +toString() String
+    class 学生实体类Student {
+        -编号 id
+        -学号 studentNo
+        -姓名 name
+        -性别 gender
+        -年龄 age
+        -专业 major
+        -班级 className
+        +获取编号()
+        +设置编号()
+        +获取学号()
+        +设置学号()
+        +获取姓名()
+        +设置姓名()
+        +获取性别()
+        +设置性别()
+        +获取年龄()
+        +设置年龄()
+        +获取专业()
+        +设置专业()
+        +获取班级()
+        +设置班级()
     }
 
-    class Dbconn {
-        -URL$ String
-        -USER$ String
-        -PASSWORD$ String
-        -DRIVER$ String
-        +getConnection()$ Connection
-        +close(conn,stmt,rs)$ void
-        +close(conn,stmt)$ void
+    class 数据库工具类Dbconn {
+        -连接地址
+        -用户名
+        -密码
+        -驱动类
+        +获取连接()
+        +关闭资源()
     }
 
-    class StudentModel {
-        +getAllStudents() List
-        +getStudentById(int) Student
-        +insertStudent(Student) int
-        +updateStudent(Student) int
-        +deleteStudent(int) int
-        +insertStudentBatch(List) int
+    class 学生模型类StudentModel {
+        +查询所有学生()
+        +按编号查询()
+        +新增学生()
+        +修改学生()
+        +删除学生()
+        +批量导入()
     }
 
-    class ListStudentServlet {
-        +doGet(req,resp)
-        +doPost(req,resp)
+    class 列表控制器ListStudentServlet {
+        +处理GET请求()
+        +处理POST请求()
     }
-    class InsertStudentServlet {
-        +doGet(req,resp)
-        +doPost(req,resp)
+    class 新增控制器InsertStudentServlet {
+        +处理GET请求()
+        +处理POST请求()
     }
-    class UpStudentServlet {
-        +doGet(req,resp)
+    class 修改前控制器UpStudentServlet {
+        +处理GET请求()
     }
-    class DoStudentServlet {
-        +doPost(req,resp)
+    class 修改后控制器DoStudentServlet {
+        +处理POST请求()
     }
-    class ShowStudentServlet {
-        +doGet(req,resp)
+    class 删除前控制器ShowStudentServlet {
+        +处理GET请求()
     }
-    class DeleteStudentServlet {
-        +doGet(req,resp)
+    class 删除后控制器DeleteStudentServlet {
+        +处理GET请求()
     }
-    class ImportStudentServlet {
-        +doGet(req,resp)
-        +doPost(req,resp)
-    }
-
-    class HttpServlet {
-        &lt;&lt;abstract&gt;&gt;
-        +doGet(req,resp)
-        +doPost(req,resp)
+    class 导入控制器ImportStudentServlet {
+        +处理GET请求()
+        +处理POST请求()
     }
 
-    HttpServlet <|-- ListStudentServlet
-    HttpServlet <|-- InsertStudentServlet
-    HttpServlet <|-- UpStudentServlet
-    HttpServlet <|-- DoStudentServlet
-    HttpServlet <|-- ShowStudentServlet
-    HttpServlet <|-- DeleteStudentServlet
-    HttpServlet <|-- ImportStudentServlet
+    列表控制器ListStudentServlet ..|> HttpServlet
+    新增控制器InsertStudentServlet ..|> HttpServlet
+    修改前控制器UpStudentServlet ..|> HttpServlet
+    修改后控制器DoStudentServlet ..|> HttpServlet
+    删除前控制器ShowStudentServlet ..|> HttpServlet
+    删除后控制器DeleteStudentServlet ..|> HttpServlet
+    导入控制器ImportStudentServlet ..|> HttpServlet
 
-    StudentModel ..> Dbconn : use
-    StudentModel ..> Student : use
-    ListStudentServlet --> StudentModel : use
-    InsertStudentServlet --> StudentModel : use
-    InsertStudentServlet --> Student : use
-    UpStudentServlet --> StudentModel : use
-    DoStudentServlet --> StudentModel : use
-    DoStudentServlet --> Student : use
-    ShowStudentServlet --> StudentModel : use
-    DeleteStudentServlet --> StudentModel : use
-    ImportStudentServlet --> StudentModel : use
-    ImportStudentServlet --> Student : use
-</div>
+    学生模型类StudentModel ..> 数据库工具类Dbconn : 调用
+    学生模型类StudentModel ..> 学生实体类Student : 使用
+    列表控制器ListStudentServlet --> 学生模型类StudentModel : 调用
+    新增控制器InsertStudentServlet --> 学生模型类StudentModel : 调用
+    新增控制器InsertStudentServlet --> 学生实体类Student : 使用
+    修改前控制器UpStudentServlet --> 学生模型类StudentModel : 调用
+    修改后控制器DoStudentServlet --> 学生模型类StudentModel : 调用
+    修改后控制器DoStudentServlet --> 学生实体类Student : 使用
+    删除前控制器ShowStudentServlet --> 学生模型类StudentModel : 调用
+    删除后控制器DeleteStudentServlet --> 学生模型类StudentModel : 调用
+    导入控制器ImportStudentServlet --> 学生模型类StudentModel : 调用
+    导入控制器ImportStudentServlet --> 学生实体类Student : 使用
+</pre>
 <script>mermaid.initialize({startOnLoad:true,theme:'default'});</script>
 </body>
 </html>
