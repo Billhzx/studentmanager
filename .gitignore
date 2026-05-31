@@ -20,3 +20,20 @@ Thumbs.db
 
 # Temp
 *.tmp
+
+# Screenshots, test data, debug files, generated reports
+/screenshots/
+/学生信息导入模板.csv
+/学生信息导入模板.xlsx
+/src/main/webapp/testdb.jsp
+/实验六*.docx
+/docs/*.html
+
+# Word temp files
+~$*
+/screenshots/
+/学生信息导入模板.csv
+/学生信息导入模板.xlsx
+/src/main/webapp/testdb.jsp
+/实验六*.docx
+/docs/*.html
