@@ -86,14 +86,14 @@ def fill_content(table):
     add_image(cell, os.path.join(SS, '截图2.png'), width_cm=13, height_cm=8)
     add_image_caption(cell, '图2 Eclipse项目目录结构')
 
-    add_subheading_paragraph(cell, '1.3 编写实体类与数据库工具类（完成人：韩志鑫）')
+    add_subheading_paragraph(cell, '1.3 编写实体类与数据库工具类（完成人：肖辉京）')
     add_text_paragraph(cell, '在entity包中创建Student.java实体类，属性与数据库表student字段一一对应，包含无参和全参构造方法以及getter/setter方法。在dbutil包中创建Dbconn.java数据库连接工具类，封装获取Connection连接的静态方法getConnection()和关闭资源的close()方法，使用com.mysql.cj.jdbc.Driver驱动连接MySQL数据库。')
 
     add_subheading_paragraph(cell, '1.4 编写Model层与Controller层（完成人：韩志鑫）')
     add_text_paragraph(cell, '在model包中创建StudentModel.java学生信息处理类，实现getAllStudents()、getStudentById()、insertStudent()、updateStudent()、deleteStudent()、insertStudentBatch()六个方法，分别对应查询所有、按ID查询、新增、修改、删除、批量导入功能，所有数据库操作均使用PreparedStatement防止SQL注入。')
     add_text_paragraph(cell, '在control包中创建6个Servlet控制器：ListStudentServlet（列表）、InsertStudentServlet（新增）、UpStudentServlet（修改前查询）、DoStudentServlet（修改后更新）、ShowStudentServlet（删除前确认）、DeleteStudentServlet（删除后执行），并在web.xml中配置servlet和servlet-mapping。')
 
-    add_subheading_paragraph(cell, '1.5 编写JSP视图层（完成人：韩志鑫）')
+    add_subheading_paragraph(cell, '1.5 编写JSP视图层（完成人：肖辉京）')
     add_text_paragraph(cell, '在jsp文件夹下创建4个JSP视图页面：studentlist.jsp（学生列表）、studentinsert.jsp（新增学生）、studentupdate.jsp（修改学生）、studentshow.jsp（删除确认）。所有页面通过Servlet控制器转发访问，避免直接访问JSP导致的相对路径不一致问题。同时创建index.jsp作为系统入口，自动重定向到ListStudentServlet。')
 
     add_subheading_paragraph(cell, '1.6 项目部署与功能测试（完成人：韩志鑫、肖辉京）')
@@ -128,7 +128,7 @@ def fill_content(table):
 
     # ═══ 任务4 ═══
     add_heading_paragraph(cell, '四、任务4：学生信息管理系统类图')
-    add_subheading_paragraph(cell, '4.1 类图绘制（完成人：韩志鑫）')
+    add_subheading_paragraph(cell, '4.1 类图绘制（完成人：肖辉京）')
     add_text_paragraph(cell, '利用在线作图工具绘制学生信息管理软件案例的类图。类图包含以下核心类：Student（学生实体类）、Dbconn（数据库连接工具类）、StudentModel（学生信息模型类）、以及7个Servlet控制器类（ListStudentServlet、InsertStudentServlet、UpStudentServlet、DoStudentServlet、ShowStudentServlet、DeleteStudentServlet、ImportStudentServlet），均继承自HttpServlet。类之间的关系包括：Servlet类依赖StudentModel进行业务逻辑处理，StudentModel依赖Dbconn获取数据库连接、依赖Student传递数据，Servlet类与Student之间存在使用关系。')
 
     add_image(cell, os.path.join(SS, '系统类图.png'), width_cm=13, height_cm=9)
@@ -136,7 +136,7 @@ def fill_content(table):
 
     # ═══ 任务5 ═══
     add_heading_paragraph(cell, '五、任务5：学生信息管理系统用例图')
-    add_subheading_paragraph(cell, '5.1 用例图绘制（完成人：韩志鑫）')
+    add_subheading_paragraph(cell, '5.1 用例图绘制（完成人：肖辉京）')
     add_text_paragraph(cell, '利用在线作图工具绘制学生信息管理软件的用例图。系统参与者为系统管理员，用例包括：查看学生列表、新增学生信息、修改学生信息、删除学生信息、CSV批量导入。其中修改和删除用例扩展自查询学生详情用例。')
 
     add_image(cell, os.path.join(SS, '用例图.png'), width_cm=13, height_cm=9)
